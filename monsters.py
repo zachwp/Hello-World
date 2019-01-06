@@ -150,7 +150,7 @@ def get_input():
     if player.health >= 1 and ghost.health <=0 and goblin.health <= 0 and zombie.health <= 0:
        # if goblin.health == 0 and ghost.health == 0 and zombie.health == 0:
         print('Player Character is Victorious!!!!!')
-        print('Special thanks to williams family and friends especially Gary, DBA with Fanatics')
+        print('Special thanks to williams stepdad Gary, DBA with Fanatics')
         print('And to his family and dog and cat.')
         print('William, Dev.')
         print('Kandace, wife.')
