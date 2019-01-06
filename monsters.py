@@ -109,20 +109,24 @@ player = Player('dude')
 def sa(noun):
     if noun in Monsters.objects:
         thing = Monsters.objects[noun]
-        if type(thing) == Goblin or Zombie or Ghost and thing.health >= 1:
-            x = random.randint(1, 3)
-            if x == 1:
-                player.health = player.health - 1
-                note = 'the {} countered your attack'.format(thing.class_name)
-                return note
+        if type(thing) == Goblin or Zombie or Ghost:
+            if thing.health >= 1:
+                x = random.randint(1, 3)
+                if x == 1:
+                    player.health = player.health - 1
+                    note = 'the {} countered your attack'.format(thing.class_name)
+                    return note
+                else:
+                    thing.health = thing.health - 1
+                if thing.health == 0:
+                    player.health = player.health + 1
+                    msg = 'you killed the {}'.format(thing.class_name)
+                    return msg
+                else:
+                    msg = 'you hit the {}'.format(thing.class_name)
+                    return msg
             else:
-                thing.health = thing.health - 1
-            if thing.health == 0:
-                player.health = player.health + 1
-                msg = 'you killed the {}'.format(thing.class_name)
-                return msg
-            else:
-                msg = 'you hit the {}'.format(thing.class_name)
+                msg = 'there is no {} here'.format(noun)
                 return msg
         else:
             msg = 'there is no {} here'.format(noun)
@@ -146,13 +150,14 @@ def get_input():
     if player.health >= 1 and ghost.health <=0 and goblin.health <= 0 and zombie.health <= 0:
        # if goblin.health == 0 and ghost.health == 0 and zombie.health == 0:
         print('Player Character is Victorious!!!!!')
-        print('Special thanks to William Parker for creating such amazing game')
+        print('Special thanks to williams family and friends especially Gary, DBA with Fanatics')
         print('And to his family and dog and cat.')
-        print('William Parker, Lead Dev.')
-        print('Kandace Swift, wife.')
+        print('William, Dev.')
+        print('Kandace, wife.')
         print('Alex and Carly, the kids.')
         print('Peaches, the dog')
         print('And last and definitely the least, Penny, the cat.')
+        print('Apperently I forgot my snake Luna, according to  my wife.')
         print('')
         print('')
         print('')
