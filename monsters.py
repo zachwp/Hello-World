@@ -190,7 +190,8 @@ def examine(noun):
         return 'there is no {} here'.format(noun)
 
 
-verb_dict = {'say': say, 'examine': examine, 'sa': sa}
+
+verb_dict = {'say': say, 'examine': examine, 'sa': sa,}
 
 print(ghost.health)
 get_input()

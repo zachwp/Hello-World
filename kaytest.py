@@ -2,15 +2,23 @@ import time
 import datetime
 import random
 
+# added monsters to kay, using function called game(), added a new argument
+# to task for game() which just import monsters.
+# trying to make kay recur when monsters ends.
+
 def kay_func():
     tester = str(input("What should i call you:"))
     print(tester, "This is a simulated assistant, Hello my name is Kay")
+    
+    def game():
+        import monsters
+        
 
     def kay_func1():
         print("current date and time is:", datetime.datetime.now())
         x = "What can i do for you, type"
-        y = "\'insort\' to sort some numbers, type \'rps\' for rock paper"
-        z = "scissor's, type \'isprime\' to id prime numbers: "
+        y = "\'insort\' to sort some numbers, type \'rps\' for rock paper "
+        z = "scissor's, type \'isprime\' to id prime numbers, type \'game'\ to play monsters: "
         task = str(input(x + y + z))
 
         def in_sort():
@@ -66,6 +74,8 @@ def kay_func():
             rps_func()
         elif task == "isprime":
             f()
+        elif task == "game":
+            game()
     kay_func1()
 
 kay_func()
